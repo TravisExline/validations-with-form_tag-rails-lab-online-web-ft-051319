@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     if @post.valid?
       @post.save
       redirect_to post_path(@post)
-    else 
+    else
       render :new
     end
   end
