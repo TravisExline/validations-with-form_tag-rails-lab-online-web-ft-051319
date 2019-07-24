@@ -1,5 +1,10 @@
 <h2>Create an Author</h2>
-<%= form_tag authors_path, method: "post" do %>
+<%= form_tag("/author") do %>
+  Name: <%= text_field_tag "name" %>
+  Email: <%= text_field_tag "email" %>
+  Phone Number: <%= text_field_tag "phone_number" %>
+  <%= submit_tag "Create Author" %>
+<% end %>
   <div class="field">
     <%= label_tag "name", "Name" %>
     <%= text_field_tag "name" %>
