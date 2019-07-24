@@ -1,18 +1,24 @@
 <h2>Create an Author</h2>
 
-<% if @author.errors.any? %>
-  <div id="error_explanation">
-    <h2>There were some errors:</h2>
-    <ul>
-      <% @person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-
 <%= form_tag("/author") do %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label_tag "name", "Name" %>
+    <%= text_field_tag "name", @person.name %>
+  </div>
+
+
+
   Name: <%= text_field_tag "name", @person.name %>
   Email: <%= text_field_tag "email", @person.email %>
   Phone Number: <%= text_field_tag "phone_number", @person.phone_number %>
